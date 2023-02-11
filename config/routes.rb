@@ -8,4 +8,9 @@ Rails.application.routes.draw do
     resources :public_recipes, only: [:index]
   end
 
+  resources :public_recipes, only: [:index]
+  
+  # Logout 
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
 end
