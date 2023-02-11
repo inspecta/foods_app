@@ -1,0 +1,13 @@
+<div class="public-recipe-card">
+  <div class="public-recipe-card-head">
+    <%= link_to user_recipe_path(current_user.id, recipe.id) do %>
+      <h3><%= recipe.name %></h3>
+    <% end %>
+    <p>By: <%= recipe.user.name %></p>
+  </div>
+
+  <div>
+    <p>Total food items: <%= %></p>
+    <p>Total price: <%= %></p>
+  </div>
+</div>

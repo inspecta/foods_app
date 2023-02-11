@@ -1,0 +1,62 @@
+<div class="recipe-details">
+  <h2><%= @recipe.name %></h2>
+  <div class="recipe-info">
+    <div class="recipe-info-field">
+      <h4>Preparation time: </h4>
+      <span><%= @recipe.preparation_time %> hours </span>
+    </div>
+    <div class="recipe-info-field">
+      <h4>Cooking time: </h4>
+      <span>
+        <%= @recipe.cooking_time %> hours
+      </span>
+    </div>
+    <div class="recipe-info-field">
+      <h4>Steps are as follows: </br> </h4>
+      <span>
+        <%= @recipe.description %>
+      </span>
+    </div>
+  </div>
+
+  <div class="recipe-details-btns">
+    <p>
+      <%= link_to "Generate shopping list", user_shopping_list_path %>
+    </p>
+    <p>Add ingredient</p>
+  </div>
+  <hr/>
+  <div>
+  <table>
+      <thead>
+        <tr>
+          <th>Food</th>
+          <th>Quantity</th>
+          <th>Value</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @foods.each do |food| %>
+          <tr>
+            <td>
+              <%= food.name %>
+            </td>
+            <td><%= food.measurement_unit %></td>
+            <td><%= food.price %></td>
+            <td>
+              <%= button_to "Remove", 
+                user_food_path(current_user.id, food.id), method: :delete,
+                data: { confirm: "Delete food?" } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="back-btn">
+  <%= link_to "Back to recipes", user_recipes_path %>
+</div>
+

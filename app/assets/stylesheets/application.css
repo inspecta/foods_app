@@ -1,0 +1,343 @@
+*,
+html {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root {
+  --color-1: #5c7598;
+  --color-2: #abb7c8;
+  --color-3: #dadadb;
+  --color-4: #f7f0c7;
+  --color-5: #c2c4b6;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notice {
+  color: green;
+  padding: 5px;
+  background-color: rgb(230, 255, 230);
+  border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
+  background-color: #abb7c8;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #5c7598;
+  color: #fff;
+}
+
+a:hover {
+  background-color: var(--color-1);
+  color: #000;
+}
+
+.home-page,
+.login,
+.registration,
+.public-recipes,
+.recipe-details,
+.user-recipes,
+.add-recipe-form,
+.add-food-form,
+.show-foods-page,
+.shopping-cart {
+  width: 60%;
+  background-color: rgba(194, 196, 182, 0.4);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  margin: auto;
+}
+
+.home-body {
+  padding: 0 10px 10px 20px;
+}
+
+.home-body h3 {
+  color: var(--color-1);
+}
+
+.recipes-home,
+.foods-home {
+  margin-bottom: 2em;
+}
+
+.public-recipes-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.public-recipe-card-head > a {
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.recipes a {
+  text-align: center;
+  width: 100%;
+}
+
+.food-names > a {
+  border: none;
+  background-color: transparent;
+  color: var(--color-1);
+  cursor: pointer;
+}
+
+.public-recipes-btn > p > a {
+  background-color: var(--color-2);
+}
+
+.login,
+.registration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login h3,
+.registration h3 {
+  color: var(--color-1);
+  width: 100%;
+  text-align: center;
+}
+
+.actions input {
+  background-color: var(--color-1);
+  border: 0;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.login form input,
+.registration form input {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.actions input:hover {
+  background-color: var(--color-2);
+  color: #fff;
+}
+
+.public-recipes > h1 {
+  text-align: center;
+  color: var(--color-1);
+}
+
+.public-recipe-card {
+  border: 1px solid var(--color-1);
+  width: 80%;
+  margin: 0 auto 1em auto;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 2em;
+}
+
+.public-recipe-card-head {
+  display: flex;
+  flex-direction: column;
+}
+
+.public-recipe-card-head > a > h3 {
+  color: var(--color-1);
+}
+
+.public-recipe-card-head > a > h3:hover {
+  color: var(--color-2);
+}
+
+.public-recipes > p {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Rceipe Details */
+
+.recipe-details > h2 {
+  text-align: center;
+  color: var(--color-1);
+}
+
+.recipe-info {
+  padding: 0 0 10px 10px;
+}
+
+.recipe-info-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.recipe-info-field:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.recipe-details-btns {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.recipe-details-btns > p {
+  background-color: var(--color-2);
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px var(--color-1);
+  cursor: pointer;
+}
+
+.recipe-details-btns > p:hover {
+  color: #fff;
+  background-color: var(--color-1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 2px solid var(--color-2);
+  padding: 5px;
+}
+
+th {
+  background-color: var(--color-2);
+  text-align: left;
+}
+
+td > form > button {
+  border: none;
+  background-color: transparent;
+  color: var(--color-1);
+  cursor: pointer;
+}
+
+.recipe-name-remove > form > button {
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  color: var(--color-1);
+  cursor: pointer;
+  margin-bottom: 1em;
+}
+
+td > form > button:hover {
+  color: var(--color-2);
+}
+
+.back-btn {
+  text-align: center;
+  margin-top: 2em;
+}
+
+/* User recipes */
+.user-recipes > h1 {
+  text-align: center;
+  color: var(--color-1);
+}
+
+.user-recipe-info-card {
+  border: 1px solid var(--color-1);
+  width: 90%;
+  margin: 0 auto 1em auto;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  justify-content: space-between;
+}
+
+.recipe-name-remove h4 > a {
+  background-color: transparent;
+  border: none;
+  color: var(--color-1);
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  width: 90%;
+  margin: auto;
+  padding-bottom: 10px;
+}
+
+/* Add Recipe */
+.add-recipe-form,
+.add-food-form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-recipe-form > h1 {
+  color: var(--color-1);
+}
+
+/* Show foods */
+.show-foods-page {
+  padding: 10px;
+}
+
+.show-foods-page h1 {
+  text-align: center;
+  color: var(--color-1);
+}
+
+.add-food-btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1em;
+}
+
+.foods {
+  border: 2px solid var(--color-1);
+  margin-bottom: 2em;
+}
+
+.food-names > a:hover {
+  color: var(--color-2);
+}
+
+.foods-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* ShoppingCart */
+.shopping-cart {
+  padding: 10px;
+}
+
+.shopping-cart > h1 {
+  color: var(--color-1);
+}

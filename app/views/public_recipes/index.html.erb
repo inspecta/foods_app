@@ -1,0 +1,16 @@
+<div class="public-recipes">
+  <h1>Public Recipes</h1>
+  <div>
+    <% if @recipes.empty? %>
+      <p>No public recipes available.</p>
+    <% else %>
+      <% @recipes.each do |recipe| %>
+        <%= render partial: 'public_recipe_card', locals: { recipe: recipe } %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <p>
+    <%= link_to "Back to Dashboard", users_path(current_user) %>
+  </p>
+</div>
