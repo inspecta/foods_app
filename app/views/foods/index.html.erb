@@ -1,14 +1,39 @@
-<p style="color: green"><%= notice %></p>
+<div>
+  <h1>Foods</h1>
 
-<h1>Foods</h1>
+  <%= link_to "Add food", new_user_food_path %>
 
-<div id="foods">
-  <% @foods.each do |food| %>
-    <%= render food %>
-    <p>
-      <%= link_to "Show this food", food %>
-    </p>
-  <% end %>
+  <div id="foods">
+    <% if @foods.empty? %>
+      <p>No foods available.</p>
+    <% else %>
+      <table>
+        <thead>
+          <tr>
+            <th>Food</th>
+            <th>Measurement Unit</th>
+            <th>Unit Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @foods.each do |food| %>
+            <tr>
+              <td>
+
+                <%= link_to food.name, user_food_url(current_user.id, food.id) %>
+              </td>
+              <td><%= food.measurement_unit %></td>
+              <td><%= food.price %></td>
+              <td>
+                <%= button_to "Delete", 
+                  user_food_path(current_user.id, food.id), method: :delete,
+                  data: { confirm: "Delete food?" } %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
 </div>
-
-<%= link_to "New food", new_food_path %>
