@@ -1,29 +1,31 @@
-<h1>Recipes</h1>
+<div class="user-recipes">
+  <h1>Recipes</h1>
 
-<div id="recipes">
-  <% if @recipes.empty? %>
-  <p class="">No recipes available! </p>
-  <% else %>
-    <% @recipes.each do |recipe| %>
-      <div class="">
-        <div>
-          <%= recipe.name %>
-          <% if can? :destroy, recipe %>
-            <%= button_to "REMOVE", 
-            user_recipe_path(current_user.id, recipe.id), method: :delete,
-            data: { confirm: "Delete Recipe?" } %>
-        <% end %>
+  <div class="recipes">
+    <% if @recipes.empty? %>
+      <p class="">No recipes available! </p>
+    <% else %>
+      <% @recipes.each do |recipe| %>
+        <div class="user-recipe-info-card">
+          <div class="recipe-name-remove">
+            <h4>
+              <%= link_to recipe.name, user_recipe_url(current_user.id, recipe.id) %>
+            </h4>
+            <% if can? :destroy, recipe %>
+              <%= button_to "REMOVE", 
+              user_recipe_path(current_user.id, recipe.id), method: :delete,
+              data: { confirm: "Delete Recipe?" } %>
+            <% end %>
           </div>
-        <div>
-          <p><%= recipe.description %></p>
+          <div>
+            <p><%= recipe.description %></p>
+          </div>
         </div>
-        <p>
-          <%= link_to "View Recipe",
-          user_recipe_url(current_user.id, recipe.id) %>
-        </p>
-      <div>
+      <% end %>
     <% end %>
-  <% end %>
+    <div class="links">
+      <%= link_to "New recipe", new_user_recipe_path(current_user) %>
+      <%= link_to "Back to Dashboard", users_path(current_user) %>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New recipe", new_user_recipe_path(current_user) %>

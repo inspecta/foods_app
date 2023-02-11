@@ -1,17 +1,31 @@
 <div class="recipe-details">
   <h2><%= @recipe.name %></h2>
-  <div class="">
-    <p>Preparation time: <%= @recipe.preparation_time %> hours</p>
-    <p>Cooking time: <%= @recipe.cooking_time %> hours</p>
-    <p><%= @recipe.description %></p>
+  <div class="recipe-info">
+    <div class="recipe-info-field">
+      <h4>Preparation time: </h4>
+      <span><%= @recipe.preparation_time %> hours </span>
+    </div>
+    <div class="recipe-info-field">
+      <h4>Cooking time: </h4>
+      <span>
+        <%= @recipe.cooking_time %> hours
+      </span>
+    </div>
+    <div class="recipe-info-field">
+      <h4>Steps are as follows: </br> </h4>
+      <span>
+        <%= @recipe.description %>
+      </span>
+    </div>
   </div>
-</div>
 
-<div>
-  <div>
-    <p>Generate shopping list</p>
+  <div class="recipe-details-btns">
+    <p>
+      <%= link_to "Generate shopping list", user_shopping_list_path %>
+    </p>
     <p>Add ingredient</p>
   </div>
+  <hr/>
   <div>
   <table>
       <thead>
@@ -26,7 +40,7 @@
         <% @foods.each do |food| %>
           <tr>
             <td>
-              <%= link_to food.name, user_food_url(current_user.id, food.id) %>
+              <%= food.name %>
             </td>
             <td><%= food.measurement_unit %></td>
             <td><%= food.price %></td>
@@ -42,6 +56,7 @@
   </div>
 </div>
 
-<div>
+<div class="back-btn">
   <%= link_to "Back to recipes", user_recipes_path %>
 </div>
+

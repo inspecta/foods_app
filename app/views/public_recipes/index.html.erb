@@ -1,4 +1,4 @@
-<div class="">
+<div class="public-recipes">
   <h1>Public Recipes</h1>
   <div>
     <% if @recipes.empty? %>
@@ -9,4 +9,8 @@
       <% end %>
     <% end %>
   </div>
+
+  <p>
+    <%= link_to "Back to Dashboard", users_path(current_user) %>
+  </p>
 </div>

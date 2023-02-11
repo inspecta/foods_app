@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @foods = Food.where(user_id: current_user.id)
+    @recipes = Recipe.where(user_id: current_user.id)
   end
 end

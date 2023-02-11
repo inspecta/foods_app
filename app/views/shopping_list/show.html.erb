@@ -1,0 +1,48 @@
+<div class="shopping-cart">
+  <h1>Shopping List</h1>
+
+  <div>
+    <% if @foods.empty? %>
+      <p>No food items in the your shopping list</p>
+
+      <div class="links">
+        <%= link_to "Add Food", new_user_food_path(current_user) %>
+        <%= link_to "Back to Dashboard", users_path(current_user) %>
+      </p>
+    <% else %>
+    <div class="shopping-cart-head">
+      <p>Ammount of food items to buy: <%= @foods.count() %></p>
+      <p>Total value of food needed: <%= Food.total_price %></p>
+    </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Food</th>
+            <th>Quantity</th>
+            <th>Value</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @foods.each do |food| %>
+            <tr>
+              <td>
+                <%= food.name %>
+              </td>
+              <td><%= food.measurement_unit %></td>
+              <td><%= food.price %></td>
+              <td>
+                <%= button_to "Remove", 
+                  user_food_path(current_user.id, food.id), method: :delete,
+                  data: { confirm: "Delete food?" } %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+    <p>
+      <%= link_to "Back to Dashboard", users_path(current_user) %>
+    </p>       
+  </div>
+</div>
