@@ -16,17 +16,17 @@ RSpec.describe Recipe, type: :model do
   end
 
   # validations
-  describe "recipe#Validations" do
-    it "is valid with valid attributes" do
+  describe 'recipe#Validations' do
+    it 'is valid with valid attributes' do
       expect(@recipe).to be_valid
     end
 
-    it "is invalid with invalid attributes" do
+    it 'is invalid with invalid attributes' do
       @recipe.name = nil
       expect(@recipe).to be_invalid
     end
 
-    it "is invalid if no description is provided" do
+    it 'is invalid if no description is provided' do
       @recipe.description = nil
       expect(@recipe).to be_invalid
     end
