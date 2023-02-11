@@ -1,0 +1,31 @@
+<div class="recipe-details">
+  <h2><%= @recipe.name %></h2>
+  <div class="">
+    <p>Preparation time: <%= @recipe.preparation_time %> hours</p>
+    <p>Cooking time: <%= @recipe.cooking_time %> hours</p>
+    <p><%= @recipe.description %></p>
+  </div>
+</div>
+
+<div>
+  <div>
+    <p>Generate shopping list</p>
+    <p>Add ingredient</p>
+  </div>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <td>Food</td>
+          <td>Quantity</td>
+          <td>Value</td>
+          <td>Actions</td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</div>
+
+<div>
+  <%= link_to "Back to recipes", user_recipes_path %>
+</div>

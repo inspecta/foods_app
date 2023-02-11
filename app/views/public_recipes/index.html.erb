@@ -1,0 +1,12 @@
+<div class="">
+  <h1>Public Recipes</h1>
+  <div>
+    <% if @recipes.empty? %>
+      <p>No public recipes available.</p>
+    <% else %>
+      <% @recipes.each do |recipe| %>
+        <%= render partial: 'public_recipe_card', locals: { recipe: recipe } %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
