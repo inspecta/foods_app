@@ -1,50 +1,52 @@
-<div>
-  <h1>Hello <%= current_user.name %>!</h1>
-  <%= link_to "Logout", logout_path, method: :delete %>
-</div>
-
-<div>
-  <div>
-    <h3>Foods</h3>
-    <% if @foods.empty? %>
-      <p>No foods available.</p>
-      <div>
-        <p>
-          <%= link_to "Add Food", new_user_food_path(current_user) %>
-        </p>
-      </div>
-    <% else %>
-      <p>Foods available:
-        <span><%= @foods.count() %></span>
-      </p>
-      <p>
-        <%= link_to "View Foods", user_foods_path(current_user) %>
-      </p>
-    <% end %>
-  <div>
-
-  <div>
-    <h3>Recipes</h3>
-    <% if @recipes.count() < 1  %>
-      <p>No recipes available</p>
-      <div>
-        <p>
-          <%= link_to "Add Recipe", new_user_recipe_path(current_user) %>
-        </p>
-      </div>
-    <% else %>
-      <p>Recipes available:
-        <span><%= @recipes.count() %></span>
-      </p>
-      <p>
-        <%= link_to "View Recipes", user_recipes_path(current_user) %>
-      </p>
-    <% end %>
+<div class="home-page">
+  <div class="nav">
+    <h3>Hello <%= current_user.name %>!</h3>
+    <%= link_to "Logout", logout_path, method: :delete %>
   </div>
+  <hr/>
+  <div class="home-body">
+    <div class="foods-home">
+      <h3>Foods</h3>
+      <% if @foods.empty? %>
+        <p>No foods available.</p>
+        <div>
+          <p>
+            <%= link_to "Add Food", new_user_food_path(current_user) %>
+          </p>
+        </div>
+      <% else %>
+        <p>Foods available:
+          <span><%= @foods.count() %></span>
+        </p>
+        <p>
+          <%= link_to "View Foods", user_foods_path(current_user) %>
+        </p>
+      <% end %>
+    </div>
 
-  <div>
-    <p>
-      <%= link_to "View Public Recipes", user_public_recipes_path(current_user) %>
-    </p>
-  <div>
+    <div class="recipes-home">
+      <h3>Recipes</h3>
+      <% if @recipes.count() < 1  %>
+        <p>No recipes available</p>
+        <div>
+          <p>
+            <%= link_to "Add Recipe", new_user_recipe_path(current_user) %>
+          </p>
+        </div>
+      <% else %>
+        <p>Recipes available:
+          <span><%= @recipes.count() %></span>
+        </p>
+        <p>
+          <%= link_to "View Recipes", user_recipes_path(current_user) %>
+        </p>
+      <% end %>
+    </div>
+
+    <div class="public-recipes-btn">
+      <p>
+        <%= link_to "View Public Recipes", user_public_recipes_path(current_user) %>
+      </p>
+    <div>
+  </div>
 </div>

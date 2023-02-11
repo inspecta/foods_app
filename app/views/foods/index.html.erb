@@ -1,13 +1,14 @@
-<div>
+<div class="show-foods-page">
   <h1>Foods</h1>
 
-  <%= link_to "Add food", new_user_food_path %>
-
-  <div id="foods">
+  <div class="add-food-btn">
+    <%= link_to "Add food", new_user_food_path %>
+  </div>
+  <div class="foods">
     <% if @foods.empty? %>
       <p>No foods available.</p>
     <% else %>
-      <table>
+      <table class="foods-table">
         <thead>
           <tr>
             <th>Food</th>
@@ -19,8 +20,7 @@
         <tbody>
           <% @foods.each do |food| %>
             <tr>
-              <td>
-
+              <td class="food-names">
                 <%= link_to food.name, user_food_url(current_user.id, food.id) %>
               </td>
               <td><%= food.measurement_unit %></td>
