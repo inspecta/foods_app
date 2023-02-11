@@ -80,6 +80,9 @@ The app also generates a shopping list based on what the foods required to make 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 -->
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
 
 > Describe how a new developer could make use of your project.
 
@@ -89,7 +92,8 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
  - Ruby and rails installed
-- PostgreSQL server installed also
+ - PostgreSQL server installed
+ - Visual Studio Code
 
 ### Setup
 
@@ -105,7 +109,11 @@ Install this project with:
 
 ```sh
   cd food-app
-  gem install
+```
+
+Install the required gems
+```sh
+  bundle install
 ```
 
 ### Usage
