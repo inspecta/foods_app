@@ -29,7 +29,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 RoR FOOD RECIPES <a name="about-project"></a>
+# 📖 FOOD APP <a name="about-project"></a>
 
 Food App is a Ruby on Rails application that keeps track of all your food and recipes.
 The app allows a user to add foods and the different recipes of the foods. The recipes can either be private or public. Public recipes can be see by anyone while private recipes are only seen by the owner. Only the owner can delete either a food or a reipe.
